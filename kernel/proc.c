@@ -493,6 +493,19 @@ scheduler(void)
   }
 }
 
+// lab2 procnum
+void
+procnum(uint64 *dst)
+{
+  *dst = 0;
+  struct proc *p;
+  for(p = proc; p < &proc[NPROC]; p++)
+  {
+    if(p->state != UNUSED)
+      ++(*dst);
+  }
+}
+
 // Switch to scheduler.  Must hold only p->lock
 // and have changed proc->state. Saves and restores
 // intena because intena is a property of this
