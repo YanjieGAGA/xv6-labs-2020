@@ -419,6 +419,7 @@ sys_exec(void)
   int i;
   uint64 uargv, uarg;
 
+  // 拿到 两个参数，path，argv
   if(argstr(0, path, MAXPATH) < 0 || argaddr(1, &uargv) < 0){
     return -1;
   }
